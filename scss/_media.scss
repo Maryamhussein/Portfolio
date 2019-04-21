@@ -1,0 +1,140 @@
+/*For Tablets*/
+@media (max-width: 800px) {
+  #header-home {
+    height: 30rem;
+    .header-content {
+      padding-top: 3rem;
+    }
+  }
+}
+/*For Mobile*/
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    li {
+      padding: 1rem;
+    }
+  }
+  #header {
+    &-home {
+      height: 10rem;
+      border-bottom: 3px solid $main-color;
+      .header-content {
+        display: none;
+      }
+    }
+    &-inner {
+      height: 10rem;
+    }
+  }
+  #home-a .specials,
+  #home-b .stats,
+  #home-c .process,
+  #about-d .testimonials,
+  #contact-b .contact-info,
+  .items {
+    grid-template-columns: 1fr;
+  }
+
+  /*Home section*/
+  #home {
+    &-a {
+      .specials div {
+        border-bottom: 1px solid $light-color;
+        padding-bottom: 1rem;
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+      }
+    }
+    &-b {
+      .stats div {
+        padding: 2rem 0 1rem 0;
+      }
+    }
+  }
+  /*About Section*/
+  #about {
+    &-a {
+      .about-info {
+        grid-template-areas:
+          "bioimage"
+          "bio"
+          "award-1"
+          "award-2"
+          "award-3";
+      }
+      &-c .image-logos {
+        display: none;
+      }
+    }
+    &-d {
+      padding-top: 0.5rem;
+      .testimonials ul {
+        flex-direction: column;
+      }
+    }
+  }
+  /*Contact Section*/
+  #contact {
+    &-a {
+      .text-fields {
+        grid-template-areas:
+          "name"
+          "email"
+          "subject"
+          "phone"
+          "message";
+      }
+    }
+    &-b {
+      .contact-info {
+        div {
+          padding-bottom: 1rem;
+          margin-bottom: 1rem;
+          border-bottom: 1px solid #555;
+          &:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    &-c {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+  /*Footer*/
+  #main-footer {
+    height: 7rem;
+    .footer-content {
+      flex-direction: column;
+      height: 5rem;
+      align-items: center;
+      padding-top: 1rem;
+    }
+  }
+}
+/*Landscape mode*/
+@media (max-height: 580px) {
+  #header-home {
+    .header-content {
+      padding-top: 5%;
+    }
+  }
+}
+@media (max-height: 330px) {
+  #header-home {
+    .header-content {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

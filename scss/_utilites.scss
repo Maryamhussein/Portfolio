@@ -1,0 +1,108 @@
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+.container {
+  max-width: $page-width;
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+/*Shared class between all buttons*/
+%btn-shared {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn {
+  &-main {
+    @extend %btn-shared;
+    color: set-text-color($main-color);
+    background-color: $main-color;
+  }
+  &-light {
+    @extend %btn-shared;
+    color: set-text-color($light-color);
+    background-color: $light-color;
+  }
+  &-dark {
+    @extend %btn-shared;
+    color: set-text-color($dark-color);
+    background-color: $dark-color;
+  }
+}
+/*Mean all bttton start with btn-dash and input or a link will take this style on hover*/
+button[class^="btn-"]:hover,
+a[class^="btn-"]:hover,
+input[class^="btn-"]:hover {
+  background-color: $main-color;
+}
+.text-center {
+  text-align: center;
+}
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.py {
+  &-1 {
+    padding: 1rem 0;
+  }
+  &-2 {
+    padding: 2rem 0;
+  }
+  &-3 {
+    padding: 3rem 0;
+  }
+  &-4 {
+    padding: 4rem 0;
+  }
+}
+.my {
+  &-1 {
+    margin: 1rem 0;
+  }
+  &-2 {
+    margin: 2rem 0;
+  }
+  &-3 {
+    margin: 3rem 0;
+  }
+}
+.bottom-line {
+  width: 40px;
+  height: 2px;
+  background: $main-color;
+  margin: 0.8rem auto;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+  text-transform: uppercase;
+  padding-bottom: 0.3rem;
+}
+.bg {
+  &-light {
+    background: $light-color;
+    color: set-text-color($light-color);
+  }
+  &-dark {
+    background: $dark-color;
+    color: set-text-color($dark-color);
+  }
+  &-main {
+    background: $main-color;
+    color: set-text-color($main-color);
+  }
+  &-medium {
+    background: $medium-color;
+    color: set-text-color($medium-color);
+  }
+}

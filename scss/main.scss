@@ -1,0 +1,342 @@
+@import "config";
+@import "utilites";
+@import "items";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Dosis", sans-serif;
+  line-height: 1.4;
+  background: #fff;
+}
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+#logo {
+  width: 70px;
+  height: 70px;
+  color: #fff;
+  text-transform: uppercase;
+}
+/*Main nav*/
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+
+    li {
+      padding: 1rem 1.5rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 0.5rem;
+        text-transform: uppercase;
+        transition: border-color 0.5s;
+
+        &:hover {
+          border-color: $medium-color;
+        }
+        &.current {
+          border-color: $main-color;
+        }
+      }
+    }
+  }
+}
+/*Header*/
+#header {
+  &-home {
+    background: $bg-image no-repeat center right / cover;
+    height: 100vh;
+    color: #fff;
+
+    .header-content {
+      text-align: center;
+      padding-top: 20%;
+
+      h1 {
+        font-size: 4rem;
+
+        .text-type .txt {
+          border-right: 0.2rem solid #777;
+        }
+      }
+    }
+  }
+  &-inner {
+    background: $bg-image no-repeat 20% 30% / cover;
+    height: 5.5rem;
+    border-bottom: 2px solid $main-color;
+  }
+}
+#home {
+  /*Section A*/
+  &-a {
+    .specials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      margin-top: 3rem;
+
+      .fas {
+        color: $main-color;
+        padding-bottom: 0.5rem;
+      }
+    }
+  }
+  /*Section B*/
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      div:nth-child(odd) {
+        background: $light-color;
+      }
+      div:nth-child(even) {
+        background: $medium-color;
+      }
+      li {
+        line-height: 2;
+        &.stats-title {
+          font-size: 1.4rem;
+        }
+        &.stats-number {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  /*Section C*/
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+
+      &-icon {
+        position: relative;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        background: $dark-color;
+        color: set-text-color($dark-color);
+        text-align: center;
+        padding: 2rem;
+        line-height: 70px;
+        transition: all 1s;
+        &:hover {
+          background: $main-color;
+          color: $dark-color;
+          width: 90px;
+          height: 90px;
+          .process-step {
+            background: $dark-color;
+            color: #fff;
+          }
+        }
+      }
+
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $main-color;
+        color: set-text-color($main-color);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        padding: 1rem;
+        font-size: 1.3rem;
+        transition: all 1s;
+        line-height: 15px;
+      }
+    }
+  }
+}
+/*About section*/
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        "bioimage bio bio"
+        "award-1 award-2 award-3";
+      grid-gap: 1rem;
+    }
+    .bio {
+      border-left: 3px solid $main-color;
+      grid-area: bio;
+      padding: 0.75rem;
+    }
+    .bio-image {
+      grid-area: bioimage;
+    }
+    .award-1 {
+      grid-area: award-1;
+    }
+    .award-2 {
+      grid-area: award-2;
+    }
+    .award-3 {
+      grid-area: award-3;
+    }
+    .award-1 .fas,
+    .award-2 .fas,
+    .award-3 .fas {
+      color: $main-color;
+      padding-bottom: 1rem;
+    }
+  }
+  &-b {
+    color: #fff;
+    .progress {
+      height: 20px;
+      background: $medium-color;
+      border-radius: 8px;
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+      div {
+        background: $main-color;
+        height: inherit;
+        text-align: center;
+      }
+    }
+  }
+  &-c {
+    .image-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+      img {
+        width: 40%;
+        margin: 0 auto;
+      }
+    }
+  }
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 0.75rem;
+      div {
+        p {
+          border: 1px solid $medium-color;
+          padding: 0.5rem;
+          border-radius: 5px;
+          margin-bottom: 1rem;
+        }
+        ul {
+          display: flex;
+          list-style: none;
+          align-items: center;
+
+          img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+/*Contact page*/
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-areas:
+        "name email"
+        "subject phone"
+        "message message";
+      .name-input {
+        grid-area: name;
+      }
+      .subject-input {
+        grid-area: subject;
+      }
+      .email-input {
+        grid-area: email;
+      }
+      .phone-input {
+        grid-area: phone;
+      }
+      .message-input {
+        grid-area: message;
+      }
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+    button[type="submit"] {
+      width: 50%;
+      margin-top: 0.5rem;
+      border-radius: 0;
+    }
+  }
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+  }
+  &-c {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+/*Footer*/
+#main-footer {
+  background: $dark-color;
+  color: #fff;
+  height: 5rem;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+
+  .social .fab {
+    border-radius: 50%;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    border: 2px solid #fff;
+    width: 20px;
+    height: 20p1x;
+    text-align: center;
+    line-height: 20px;
+    &:hover {
+      background: $main-color;
+    }
+  }
+}
+@import "media";
